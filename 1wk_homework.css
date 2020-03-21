@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* utf-8 을 입력하지 않으면 css 가 먹지 않았다. 헐  */
+
+/* font-family: 'Stylish', sans-serif; 라고 class 바깥 공간에 입력하면 css 가 깨지네  ? ㅋㅋ  */
+
+.wrapper{
+    width: 560px;
+    /* border: 3px solid orange; */
+    margin: 0 auto;
+    font-family: 'Stylish', sans-serif;
+    
+
+    /* 뤠퍼에는 margin 0 auto 를 먹여야 가운데 */
+}
+.candle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 이렇게 해줘야 가운데 정렬됨. ㅎㅎ  */
+    /* margin: 0 auto; */ 라고 하면 먹지 않는다. 
+    /* border: 1px solid blueviolet; */
+    
+}
+
+.candle-description {
+    
+    margin: 15px 0px 15px 0px;
+}
+.sell-candle {
+    font-size: 30px;
+
+}

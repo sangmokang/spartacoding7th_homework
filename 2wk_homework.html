@@ -14,14 +14,81 @@
         /* 이름, 수량, 주소, 휴대폰번호dddㅇㅇ 중 하나라도ㅇㅇ 입력되어 있지 않으면, alert이 뜨고,
         입력 안한 곳에 d 포커스가 맞춰지도록 해보세요.(JQuery의 .focus()를 이용하면 굿!) */
 
+        // **경우의수**
+        // 이름, 수량, 주소, 휴대폰 4개 모두 입력 
+        // 4가지를 모두 입력 했을 때 -- > OK 통과 Submib 입력. 
+        // 이, 수 , 주 , 휴 
+
+        // 즉 아래의 케이스 들만 Alert 가 가야한다. 
+        // 3가지를  입력 했을 때 -->
+        // 이, 수, 주 
+        // 이, 주 , 휴
+        // 수 주 휴 
+
+        // 2가지를 입력
+        // 이 수 
+        // 이 주 
+        // 이 휴 
+        // 수 주 
+        // 수 휴
+        // 주 휴 
+
+        // 1가지를 입력 할 때 
+        // 이
+        // 수
+        // 주
+        // 휴
+
+        // 4개의 불이 있다고 생각하고 Off 된 것들은 켜줘야 한다고 메시지를 줘보자 
+
+
+        // 1. i 로 돌아보기 
+        // for (i=0; i < array.length 1++) {
+        //     if (arr[i] = false) {
+        //     a = arr[]
+
+        //     }
+        // }
+        // -----
+        // const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        // words.filter(word => word.length > 6);  // ["exuberant", "destruction", "present"]
+
+// const fields = ['name', 'qty', 'address', 'mobile']; 
+// falseFields = fields.filter(fields => false);
+//alert(falseFields '를 입력해주세요') ==> ok 동작함. 
+
+// var array1 = [a, b , c, d, e]
+// undefined
+// array1
+// (5) [true, true, true, true, false]
+// var newArray = array1.filter(function(element) {
+//     return element = false; }
+// VM29807:2 Uncaught SyntaxError: missing ) after argument list
+// var newArray = array1.filter(function(element)) {
+//     return element = false; }
+// VM31883:1 Uncaught SyntaxError: Unexpected token ')'
+// var newArray = array1.filter(function(element) {
+//     return element = false; })
+
+
+
+
+
+
+
         function submit() {
             let name_input = $('#user-name').val();
             console.log(1);
+            // function isKoreanName(n) {
+            //     n = name_input
+            //     var reg = /^[가-힣]{2,4}$/;
+            //     return reg.test(n)
+            // }
+
             if (name_input == '') {
                 alert('유저네임 채워주셔야쥬?');
                 console.log(2);
             }
-
 
             let order_qt = $('#inputGroupSelect01').val();
             console.log(3);
@@ -62,7 +129,7 @@
             
             // 알람이 4번 울리는 것을 한 번에 메시지를 주고 싶어졌다. 
 
-            
+    
 
 
             // if (name_input =='' &  

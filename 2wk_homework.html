@@ -25,6 +25,7 @@
 
             let order_qt = $('#inputGroupSelect01').val();
             console.log(3);
+
             if (order_qt == '') {
                 console.log(4);
                 alert('수량을 선택하셔야쥬?');
@@ -33,16 +34,35 @@
 
             let address = $('#basic-url-address').val();
             console.log(5);
-            console.log(address);
+            if (address == '') {
+                console.log(6);
+                alert('주소는  ?  오잉 ?? ');
+                console.log(7);
+            }
+
+            let mobile = $('#basic-url-mobile').val();
+            console.log(8);
+            console.log(mobile);
+            
             function isCellPhone(p) {
                 console.log(6);
-                p = address.split('-').join('');
+                p = mobile.split('-').join('');
                 console.log(7);
                 var regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
                 console.log(8);
                 return regPhone.test(p);
                 console.log(9);
             }
+            
+            if (isCellPhone == true) {
+                pass
+            } else {
+                alert('전화번호를 정확하게 입력해주세요')
+            }
+            
+            // 알람이 4번 울리는 것을 한 번에 메시지를 주고 싶어졌다. 
+
+            
 
 
             // if (name_input =='' &  

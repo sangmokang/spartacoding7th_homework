@@ -82,42 +82,38 @@
 // }
 
 
-        function submit() 
-        {
+        function submit() {
             let name_input = $('#user-name').val();
-            console.log(1);
-            // function isKoreanName(n) {
-            //     n = name_input
-            //     var reg = /^[가-힣]{2,4}$/;
-            //     return reg.test(n)
-            // }
-
-            if (name_input == '') {
-                alert('유저네임 채워주셔야쥬?');
-                console.log(2);
-            }
-
             let order_qt = $('#inputGroupSelect01').val();
-            console.log(3);
-
-            if (order_qt == '') {
-                console.log(4);
-                alert('수량을 선택하셔야쥬?');
-                console.log(44);
-            }
-
             let address = $('#basic-url-address').val();
-            console.log(5);
-            if (address == '') {
-                console.log(6);
-                alert('주소는  ?  오잉 ?? ');
-                console.log(7);
+            let mobile = $('#basic-url-mobile').val();
+
+            // 선택자를 활용해서 Alert 주려 했는데 잘 선택이 안되네요             
+            // let orderman = $('#basic-addon3-name').val();
+            // let qty = $('#order-qty').val();
+            // let order_address = $('#basic-addon3-address').val();
+            // let order_mobile = $('#basic-addon3-mobile').val();
+            
+            if (name_input == '' && order_qt == '' && address =='' && mobile =='') {
+                alert('이름, 수량, 주소, 전화번호를 입력해주세요');
+                console.log(orderman);
+            } else if (name_input == '' && order_qt == '' && address =='') {
+                alert('이름, 수량, 주소를 입력해주세요');
+                console.log(2);
+            } else if (name_input == '' && order_qt == '') {
+                alert('이름, 수량을 입력해주세요');
+                console.log(3);
+            } else if (name_input == '') {
+                alert('이름을 입력해주세요');
+                console.log(4);
+            } else if (order_qt == '' && address =='' && mobile =='') {
+                alert('수량, 주소, 전화번호를 입력해주세요');
+            } else if (address =='' && mobile =='') {
+                alert('주소, 전화번호를 입력해주세요');
+            } else if (mobile =='') {
+                alert('전화번호를 입력해주세요');
             }
 
-            let mobile = $('#basic-url-mobile').val();
-            console.log(8);
-            console.log(mobile);
-            
             function isCellPhone(p) {
                 console.log(9);
                 p = mobile.split('-').join('');
@@ -134,21 +130,55 @@
                 alert('전화번호를 정확하게 입력해주세요')
             }
 
+            // if (name_input == '') {
+            //     alert('유저네임 채워주셔야쥬?');
+            //     console.log(2);
+            // }
+
+            // let order_qt = $('#inputGroupSelect01').val();
+            // console.log(3);
+
+            // if (order_qt == '') {
+            //     console.log(4);
+            //     alert('수량을 선택하셔야쥬?');
+            //     console.log(44);
+            // }
+
+            // let address = $('#basic-url-address').val();
+            // console.log(5);
+            // if (address == '') {
+            //     console.log(6);
+            //     alert('주소는  ?  오잉 ?? ');
+            //     console.log(7);
+            // }
+
+            // let mobile = $('#basic-url-mobile').val();
+            // console.log(8);
+            // console.log(mobile);
+            
+            // function isCellPhone(p) {
+            //     console.log(9);
+            //     p = mobile.split('-').join('');
+            //     console.log(10);
+            //     var regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
+            //     console.log(11);
+            //     return regPhone.test(p);
+            //     console.log(12);
+            // }
+            
+            // if (isCellPhone == true) {
+            //     pass
+            // } else {
+            //     alert('전화번호를 정확하게 입력해주세요')
+            // }
+
             // let array1 = [name_input, mobile, address, order_qt];
             // array1.filter()
             // console.log(array1 + '를 입력해주세요');
             
             // // 알람이 4번 울리는 것을 한 번에 메시지를 주고 싶어졌다. 
 
-            // if (name_input == '' && order_qt == '' && addres =='' && mobile =='') {
-            //     alert(name_input ',' order_qt',' address',' mobile + '을 입력해주세요');
-            // } else if (name_input == '' && order_qt == '' && addres =='') {
-            //     alert(name_input',' order_qt',' address '을 입력해주세요');
-            // } else if (name_input == '' && order_qt == '') {
-            //     alert(name_input',' order_qt '을 입력해주세요');
-            // } else if (name_input == '') {
-            //  alert(name_input'을 입력해주세요');
-            // }
+            //
         };
     </script>
     <style>
@@ -173,15 +203,15 @@
         </div>
 
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">주문자 이름</span>
+            <div class="input-group-prepend" id="test">
+                <span class="input-group-text" id="basic-addon3-name">주문자 이름</span>
             </div>
             <input type="text" class="form-control" id="user-name" aria-describedby="basic-addon3">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                <label class="input-group-text" for="inputGroupSelect01" id="order-qty">수량</label>
             </div>
             <select class="custom-select" id="inputGroupSelect01">
                 <option selected value="">수량을 선택하세요</option>
@@ -193,14 +223,14 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">주소</span>
+                <span class="input-group-text" id="basic-addon3-address">주소</span>
             </div>
             <input type="text" class="form-control" id="basic-url-address" aria-describedby="basic-addon3">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">전화번호</span>
+                <span class="input-group-text" id="basic-addon3-mobile">전화번호</span>
             </div>
             <input type="text" class="form-control" id="basic-url-mobile" aria-describedby="basic-addon3">
         </div>

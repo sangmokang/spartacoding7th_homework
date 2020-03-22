@@ -70,13 +70,20 @@
 // var newArray = array1.filter(function(element) {
 //     return element = false; })
 
+// 22일 오전에 생각한 방법
+// if (a && b && c && d  ) {
+//     pass;
+// } else if (a && b && c) {
+//     print (d '를 입력해주세요');
+// } else if (a && b) {
+//     print (c '와' d '를 입력해주세요');
+// }else if (a) {
+//     print (b '와' c , d '를 입력해주세요');
+// }
 
 
-
-
-
-
-        function submit() {
+        function submit() 
+        {
             let name_input = $('#user-name').val();
             console.log(1);
             // function isKoreanName(n) {
@@ -127,17 +134,22 @@
                 alert('전화번호를 정확하게 입력해주세요')
             }
 
-            let array1 = [name_input, mobile, address, order_qt];
-            array1.filter()
-            console.log(array1 + '를 입력해주세요');
+            // let array1 = [name_input, mobile, address, order_qt];
+            // array1.filter()
+            // console.log(array1 + '를 입력해주세요');
             
-            // 알람이 4번 울리는 것을 한 번에 메시지를 주고 싶어졌다. 
+            // // 알람이 4번 울리는 것을 한 번에 메시지를 주고 싶어졌다. 
 
-    
-
-
-            // if (name_input =='' &  
-        }
+            // if (name_input == '' && order_qt == '' && addres =='' && mobile =='') {
+            //     alert(name_input ',' order_qt',' address',' mobile + '을 입력해주세요');
+            // } else if (name_input == '' && order_qt == '' && addres =='') {
+            //     alert(name_input',' order_qt',' address '을 입력해주세요');
+            // } else if (name_input == '' && order_qt == '') {
+            //     alert(name_input',' order_qt '을 입력해주세요');
+            // } else if (name_input == '') {
+            //  alert(name_input'을 입력해주세요');
+            // }
+        };
     </script>
     <style>
 

@@ -100,16 +100,34 @@
             } else if (name_input == '' && order_qt == '' && address =='') {
                 alert('이름, 수량, 주소를 입력해주세요');
                 console.log(2);
-            } else if (name_input == '' && order_qt == '') {
+            } else if (name_input == '' && order_qt == '' && mobile =='') {
+                alert('이름, 수량, 전화번호를 입력해주세요');
+                console.log(2);
+            } else if (name_input == '' && address == '' && mobile =='') {
+                alert('이름, 주소, 전화번호를 입력해주세요');
+                console.log(2);
+            }  else if (order_qt == '' && address =='' && mobile =='') {
+                alert('수량, 주소, 전화번호를 입력해주세요');
+            }  else if (name_input == '' && order_qt == '') {
                 alert('이름, 수량을 입력해주세요');
                 console.log(3);
+            } else if (address =='' && mobile =='') {
+                alert('주소, 전화번호를 입력해주세요');
+            } else if (name_input == ''&& address =='') {
+                alert('이름, 주소를 입력해주세요');
+            } else if (name_input == ''&& mobile =='') {
+                alert('이름, 전화번호를 입력해주세요');
+            } else if (order_qt == ''&& address =='') {
+                alert('수량, 주소를 입력해주세요');
+            } else if (order_qt == ''&& mobile =='') {
+                alert('수량, 전화번호를 입력해주세요');
             } else if (name_input == '') {
                 alert('이름을 입력해주세요');
                 console.log(4);
-            } else if (order_qt == '' && address =='' && mobile =='') {
-                alert('수량, 주소, 전화번호를 입력해주세요');
-            } else if (address =='' && mobile =='') {
-                alert('주소, 전화번호를 입력해주세요');
+            } else if (order_qt =='') {
+                alert('수량을 입력해주세요');
+            } else if (address =='') {
+                alert('주소를 입력해주세요');
             } else if (mobile =='') {
                 alert('전화번호를 입력해주세요');
             }

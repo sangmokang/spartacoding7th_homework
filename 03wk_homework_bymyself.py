@@ -15,7 +15,7 @@ data = requests.get('https://www.genie.co.kr/chart/top200?ditc=D&rtm=N&ymd=20200
 soup = BeautifulSoup(data.text, 'html.parser')
 # print (soup.select("div.newest-list > div > table.list-wrap > tbody"))
 print (soup.select(".newest-list > table.list-wrap ")
-song = soup.select(".newest-list > list-wrap > artist.ellipsis ")
+song = soup.select(".newest-list > list-wrap > title.ellipsis ")
 #body-content > div.newest-list > div > table > tbody > tr:nth-child(1) > td.info > a.title.ellipsis
 singer = soup.select(".newest-list > list-wrap > artist ellipsis")
 ranks = soup.select(".list-wrap > tr.list")

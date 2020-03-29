@@ -15,13 +15,25 @@ data = requests.get('https://www.genie.co.kr/chart/top200?ditc=D&rtm=N&ymd=20200
 soup = BeautifulSoup(data.text, 'html.parser')
 # print (soup.select("div.newest-list > div > table.list-wrap > tbody"))
 # print (soup.title.getText())
-# song = soup.find("a", {"class" : "title ellipsis"})
-# singer = soup.find("a", {"class" : "artist ellipsis"})
-# rank = soup.find("td", {"class" : "number"})
+song = soup.find("a", {"class" : "title ellipsis"})
+singer = soup.find("a", {"class" : "artist ellipsis"})
+rank = soup.find("td", {"class" : "number"})
+print (song.text)
+
+tr_list = soup.select("table.list-wrap > tbody > tr.list")
+rank = 1
+print(rank.text,',', song.text, ',', singer.text,)
+
+for tr in tr_list:
+    song = soup.select_one("a", {"class": "title ellipsis"}).text
+    singer = soup.select_one(("a", {"class": "artist ellipsis"}).text
+    print (song, singer, rank)
+    rank += 1
+
 # print (rank.text.strip(), song.text.strip(), singer.text.strip(), )
 # print (song, singer, rank.text)
 
-tr_list = soup.select("table.list-wrap > tbody > tr.list")
+
 rank = 1
 
 for tr in tr_list:

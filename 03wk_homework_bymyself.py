@@ -30,6 +30,9 @@ for tr in tr_list:
     print (song, singer, rank)
     rank += 1
 
+
+
+
 # print (rank.text.strip(), song.text.strip(), singer.text.strip(), )
 # print (song, singer, rank.text)
 

@@ -26,5 +26,5 @@ for tr_tag in tr_tags:
     rank += 1
 
 #배워야 할 것
-select, find_all : Array
-find, select_one: 한가지 선택
+# select, find_all : Array
+# find, select_one: 한가지 선택

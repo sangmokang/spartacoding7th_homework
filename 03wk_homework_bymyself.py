@@ -15,14 +15,30 @@ data = requests.get('https://www.genie.co.kr/chart/top200?ditc=D&rtm=N&ymd=20200
 soup = BeautifulSoup(data.text, 'html.parser')
 # print (soup.select("div.newest-list > div > table.list-wrap > tbody"))
 # print (soup.title.getText())
-song = soup.find("td", {"class" : "info"})
-print (song.text.strip().split('\n'))
+# song = soup.find("a", {"class" : "title ellipsis"})
+# singer = soup.find("a", {"class" : "artist ellipsis"})
+# rank = soup.find("td", {"class" : "number"})
+# print (rank.text.strip(), song.text.strip(), singer.text.strip(), )
+# print (song, singer, rank.text)
+
+tr_list = soup.select("table.list-wrap > tbody > tr.list")
+rank = 1
+
+for tr in tr_list:
+    song = tr_list.select_one(".info > a.title")
+    singer = tr_list.select_one(".info > a.artist")
+    print(rank, song.text.strip(), singer.text)
+    rank += 1
+
+    # print(rank.text.strip(), song.text.strip(), singer.text.strip())
+
 
 #body-content > div.newest-list > div > table > tbody > tr:nth-child(1) > td.info > a.title.ellipsis
-singer = soup.select_one("table > tbody > tr > td >.aritst.ellipsis")
-song = soup.select_one("table.list-wrap > tbody > tr.list > td >.title.ellipsis")
-print(song.text)
-ranks = soup.select(".list-wrap > tr.list")
+singer = soup.select("table > tbody > tr > td >.aritst.ellipsis")
+song = soup.select("table.list-wrap > tbody > tr.list > td.info >.title.ellipsis")
+rank = soup.find("table.list-wrap > tbody > tr.list > td.number > td.number")
+print(rank)
+# ranks = soup.select(".list-wrap > tr.list")
 #body-content > div.newest-list > div > table > tbody > tr:nth-child(1)
 rank = 1
 

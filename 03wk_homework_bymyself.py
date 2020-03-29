@@ -16,16 +16,25 @@ soup = BeautifulSoup(data.text, 'html.parser')
 # print (soup.select("div.newest-list > div > table.list-wrap > tbody"))
 # print (soup.title.getText())
 song = soup.find("td", {"class" : "info"})
-print (song.text.strip().split(','))
+print (song.text.strip().split('\n'))
 
 #body-content > div.newest-list > div > table > tbody > tr:nth-child(1) > td.info > a.title.ellipsis
-singer = soup.select(".newest-list > list-wrap > artist ellipsis")
+singer = soup.select_one("table > tbody > tr > td >.aritst.ellipsis")
+song = soup.select_one("table > tbody > tr > td >.title.ellipsis")
+print(singer.text, song.text)
 ranks = soup.select(".list-wrap > tr.list")
 #body-content > div.newest-list > div > table > tbody > tr:nth-child(1)
 rank = 1
 
-for rank in ranks:
-    song_tag = song.select_one(".title.ellipsis")
-    singer_tag = singer.select_one(".artist.ellipsis")
-    print(rank, song_tag.text.strip(), singer_tag.text())
+# 태그속성에 접근
+# .attrs
+# attrs['src] : 이미지 소스 위치 등
+
+
+
+
+for rank in song:
+    # song_tag = song.select_one(".title.ellipsis")
+    # singer_tag = singer.select_one(".artist.ellipsis")
+    print(rank, song[0], song[1])
     rank += 1
